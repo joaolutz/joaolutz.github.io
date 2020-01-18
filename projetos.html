@@ -1,28 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="Robots" content="index,follow" />
 	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
-	<meta name="description" content="Site pessoal de João Gabriel Méssi Lutz, analista de sistemas e publicitário" />
+	<meta name="description" content="Site pessoal de João Gabriel Méssi Lutz, analista de sistemas, publicitário e músico." />
 	<meta name="keywords" content="software, java, lutz, it" />
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen" />
+	<script src="js/strings.js" type="text/javascript"></script>
+	<script src="js/menu.js" type="text/javascript"></script>
 	<title>João Lutz - Software Developer</title>
 </head>
 <body>
 	<div id="content">
 		<p id="top">contato@joaolutz.com</p>
 		<div id="logo">
-			<h1><a href="index.html">joão.lutz</a></h1>
+			<h1><a id="logo_link" href="index.html"></a></h1>
 		</div>
-		<ul id="menu">
-			<li><a href="index.html">Home</a></li>
-			<li class="current"><a href="projetos.html">Projetos</a></li>
-			<li><a href="artigos.html">Artigos</a></li>
-			<li><a href="parceiros.html">Parceiros</a></li>
-			<li><a href="contato.php">Contato</a></li>
-		</ul>
+		<ul id="menu"></ul>
 		<div class="line"></div>
 		<div id="pitch2">
 			<h1>Comandit</h1>
@@ -42,8 +38,12 @@
 			<p>O projeto <i>Life after Love</i> nasceu de uma idéia pessoal de abrir novos horizontes e encarar novos desafios.<br/>Em breve!</p>
 		</div>
 		<div id="footer">
-			<p>João Lutz &copy; 2014 &minus; Todos os direitos reservados</p>
+			<p id="footerp"></p>
 		</div>	
 	</div>
+	<script>
+		createMenu("Projetos");
+		printStrings();
+	</script>
 </body>
 </html>
