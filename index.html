@@ -56,11 +56,12 @@
         		var head = document.querySelectorAll("head"); // seleciona os <head>	
         		head[0].innerHTML = http.responseText;
          		if(head.length > 1) head[1].remove();
+				createMenu("Home");
+				printStrings();
       		}
    		}
 	});
-		createMenu("Home");
-		printStrings();
+		
 	</script>
 </body>
 </html>
