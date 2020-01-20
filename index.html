@@ -1,5 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<head>       
+	<link rel="import" href="head.html">
+</head>
 <body>
 	<div id="content">
 		<p id="top"></p>
@@ -44,21 +47,7 @@
 		</div>	
 	</div>
 	<script>
-   		var novo_head = document.createElement("head"); // cria o nó <head></head>
-   		var htMl = document.querySelector("html"); // seleciona o elemento html
-   		htMl.insertBefore(novo_head, htMl.childNodes[0]); // insere o nó <head></head> antes do body
-   		var http = new XMLHttpRequest(); // cria o objeto XHR
-    	http.open("GET", "head.html"); // requisita a página .html
-    	http.send();
-    	http.onreadystatechange = function() {
-        	if(http.readyState == 4){ // retorno do Ajax
-        		var head = document.querySelectorAll("head"); // seleciona os <head>	
-        		head[0].innerHTML = http.responseText;
-         		if(head.length > 1) head[1].remove();
-				createMenu("Home");
-				printStrings();
-      		}
-   		}
+		createMenu("Home");
+		printStrings();
 	</script>
-</body>
 </html>
