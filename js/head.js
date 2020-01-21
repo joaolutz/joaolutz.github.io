@@ -1,15 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-   var novo_head = document.createElement("head"); // cria o nó <head></head>
-   var htMl = document.querySelector("html"); // seleciona o elemento html
-   htMl.insertBefore(novo_head, htMl.childNodes[0]); // insere o nó <head></head> antes do body
-   var http = new XMLHttpRequest(); // cria o objeto XHR
-    http.open("GET", "./head.html"); // requisita a página .html
-    http.send();
-    http.onreadystatechange = function() {
-      if(http.readyState == 4){ // retorno do Ajax
-         var head = document.querySelectorAll("head"); // seleciona os <head>
-         head[0].innerHTML = http.responseText;
-         if(head.length > 1) head[1].remove();
+function setHeader() {
+   var metatags = [
+      { tag: "meta", "http-equiv": 'Content-Type', content: 'text/html; charset=utf-8' },
+      { tag: "meta", name: "Robots", content: "index,follow" },
+      { tag: "meta", name: "author", content: "Luka Cvrk (www.solucija.com)" },
+      { tag: "meta", name: "description", content: "Site pessoal de João Gabriel Méssi Lutz, analista de sistemas, publicitário e músico." },
+      { tag: "meta", name: "keywords", content: "software, java, lutz, it" },
+      { tag: "link", rel: "shortcut icon", type: "image/x-icon", href: "images/favicon.ico" },
+      { tag: "link", rel: "stylesheet", type: "text/css", href: "css/screen.css", media: "screen" },
+      { tag: "title", innerHtml: "João Lutz - Software Developer" }
+   ];
+
+   for (var m in metatags) {
+      var tag = metatags[m];
+      var meta = document.createElement(tag.tag);
+      for (let prop in tag) {
+         if (prop != 'tag') {
+            if (prop != 'innerHtml') {
+               meta.setAttribute(prop, tag[prop]);
+            } else {
+               meta.innerHTML = tag[prop];
+            }
+         }
       }
+      document.getElementsByTagName('head')[0].appendChild(meta);
    }
-});
+}
