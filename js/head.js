@@ -10,6 +10,8 @@ function setHeader() {
       { tag: "title", innerHtml: "João Lutz - Software Developer" }
    ];
 
+   var head = document.getElementsByTagName('head')[0];
+
    for (var m in metatags) {
       var tag = metatags[m];
       var meta = document.createElement(tag.tag);
@@ -22,6 +24,6 @@ function setHeader() {
             }
          }
       }
-      document.getElementsByTagName('head')[0].appendChild(meta);
+      head.appendChild(meta);
    }
 }
