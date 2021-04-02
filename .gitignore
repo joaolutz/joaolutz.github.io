@@ -14,4 +14,4 @@ test/unit/coverage
 *.sln
 
 # Auto commit file
-commit.bat
+*.bat
