@@ -1,16 +1,16 @@
-var strings = {
+const strings = {
 	logo: "joao.lutz",
 	email: "joao.messilutz@gmail.com",
 	mailto: "mailto:joao.messilutz@gmail.com",
 	footer: "João Lutz &copy; 2022 &minus; Todos os direitos reservados"
 };
 
-function getElement(id) {
+function el(id) {
 	return document.getElementById(id);
 }
 
 function print(node, value) {
-	getElement(node).innerHTML = value;
+	el(node).innerHTML = value;
 }
 
 function printStrings() {
@@ -21,5 +21,5 @@ function printStrings() {
 
 function addMailTo() {
 	print("mailto", strings.email);
-	getElement("mailto").href = strings.mailto;
+	el("mailto").href = strings.mailto;
 }
