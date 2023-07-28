@@ -2,7 +2,7 @@ const strings = {
 	logo: "joao.lutz",
 	email: "joao.messilutz@gmail.com",
 	mailto: "mailto:joao.messilutz@gmail.com",
-	footer: "João Lutz &copy; 2022 &minus; Todos os direitos reservados"
+	footer: "João Lutz &copy; 2023 &minus; Todos os direitos reservados"
 };
 
 function el(id) {
