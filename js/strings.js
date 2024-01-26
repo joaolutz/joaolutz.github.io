@@ -3,23 +3,27 @@ const strings = {
 	email: "joao.messilutz@gmail.com",
 	mailto: "mailto:joao.messilutz@gmail.com",
 	footer: "João Lutz &copy; 2024 &minus; Todos os direitos reservados"
-};
-
-function el(id) {
-	return document.getElementById(id);
 }
 
-function print(node, value) {
-	el(node).innerHTML = value;
+function el(selector) {
+	return document.querySelector(selector)
+}
+
+function els(selector) {
+	return document.querySelectorAll(selector)
+}
+
+function text(selector, value) {
+	el(selector).innerHTML = value
 }
 
 function printStrings() {
-	print("top", strings.email);
-	print("logo_link", strings.logo);
-	print("footerp", strings.footer);
+	text("#top", strings.email)
+	text("#logo_link", strings.logo)
+	text("#footerp", strings.footer)
 }
 
 function addMailTo() {
-	print("mailto", strings.email);
-	el("mailto").href = strings.mailto;
+	text("#mailto", strings.email)
+	el("#mailto").href = strings.mailto
 }
